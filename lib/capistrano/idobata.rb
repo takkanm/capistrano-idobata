@@ -1,5 +1,6 @@
 require "capistrano/idobata/version"
 require 'pathname'
+require 'restclient'
 
 module Capistrano
   module Idobata

@@ -1,5 +1,3 @@
-require 'restclient'
-
 namespace :idobata do
   task :setup do
     @deploy_infomation = Capistrano::Idobata::DeployInfomation.new(
