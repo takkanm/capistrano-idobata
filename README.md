@@ -1,24 +1,31 @@
 # Capistrano::Idobata
 
-TODO: Write a gem description
+Capistrano 3 integration with [idobata](http://idobata.io)
+
+![](https://f.cloud.github.com/assets/43500/2460021/a57d4620-af64-11e3-83fe-f7c09d92f66d.png)
+
 
 ## Installation
 
-Add this line to your application's Gemfile:
+```
+# Gemfile
+gem 'capistrano-idobata'
+```
 
-    gem 'capistrano-idobata'
+```
+# Capfile
+require 'capistrano/idobata'
+```
 
-And then execute:
+```
+# deploy.rb
+set :idobata_hook_url, 'https://idobata.io/hook/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
+```
 
-    $ bundle
+## Support
 
-Or install it yourself as:
-
-    $ gem install capistrano-idobata
-
-## Usage
-
-TODO: Write usage instructions here
+- Ruby 2.0 or higher
+- Capistrano 3 or higher
 
 ## Contributing
 

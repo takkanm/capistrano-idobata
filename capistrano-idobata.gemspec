@@ -8,10 +8,13 @@ Gem::Specification.new do |spec|
   spec.version       = Capistrano::Idobata::VERSION
   spec.authors       = ["Mitsutaka Mimura"]
   spec.email         = ["takkanm@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Capistrano 3 integration with Idobata}
+  spec.description   = %q{Capistrano 3 integration with Idobata}
+  spec.homepage      = "https://github.com/takkanm/capistrano-idobata"
   spec.license       = "MIT"
+
+  spec.add_dependency 'capistrano', '~> 3.0'
+  spec.add_dependency 'rest-client'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
