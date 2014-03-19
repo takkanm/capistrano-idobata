@@ -36,7 +36,7 @@ namespace :idobata do
     end
   end
 
-  task :faild do
+  task :failed do
     if @idobata_client.valid?
 
       message = if @deploy_infomation.branch
@@ -54,4 +54,4 @@ before 'idobata:starting', 'idobata:setup'
 
 after 'deploy:starting', 'idobata:starting'
 after 'deploy:finished', 'idobata:finished'
-after 'deploy:failed',   'idobata:faild'
+after 'deploy:failed',   'idobata:failed'
