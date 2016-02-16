@@ -18,7 +18,7 @@ module Capistrano
       end
     end
 
-    class DeployInfomation
+    class DeployInformation
       attr_reader :idobata_hook_url, :application, :stage, :branch
 
       def initialize(idobata_hook_url: nil, application: nil, stage: nil, branch: nil)
