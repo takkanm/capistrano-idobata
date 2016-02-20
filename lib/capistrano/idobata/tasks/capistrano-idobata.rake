@@ -36,7 +36,6 @@ namespace :idobata do
 
   task :failed do
     if @idobata_client.valid?
-
       message = if @deploy_information.branch
         ":broken_heart: deploy #{@deploy_information.application}'s #{@deploy_information.branch} to #{@deploy_information.stage} failed !!"
       else
