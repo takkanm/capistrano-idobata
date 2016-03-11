@@ -14,7 +14,6 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.add_dependency 'capistrano', '~> 3.0'
-  spec.add_dependency 'rest-client'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
