@@ -1,6 +1,6 @@
-require "capistrano/idobata/version"
+require 'capistrano/idobata/version'
+require 'net/http'
 require 'pathname'
-require 'restclient'
 
 module Capistrano
   module Idobata
@@ -14,7 +14,7 @@ module Capistrano
       end
 
       def send(message)
-        RestClient.post @hook_url, source: message
+        Net::HTTP.post_form URI.parse(@hook_url), source: message
       end
     end
 
