@@ -11,7 +11,7 @@ namespace :idobata do
   end
 
   task :starting do
-    if @idobata_client.valid?
+    if @idobata_client && @idobata_client.valid?
       message = if @deploy_information.branch
         "deploy #{@deploy_information.application}'s #{@deploy_information.branch} to #{@deploy_information.stage} start !! :rocket:"
       else
@@ -23,7 +23,7 @@ namespace :idobata do
   end
 
   task :finished do
-    if @idobata_client.valid?
+    if @idobata_client && @idobata_client.valid?
       message = if @deploy_information.branch
         ":white_check_mark: deploy #{@deploy_information.application}'s #{@deploy_information.branch} to #{@deploy_information.stage} success !!"
       else
@@ -35,7 +35,7 @@ namespace :idobata do
   end
 
   task :failed do
-    if @idobata_client.valid?
+    if @idobata_client && @idobata_client.valid?
       message = if @deploy_information.branch
         ":broken_heart: deploy #{@deploy_information.application}'s #{@deploy_information.branch} to #{@deploy_information.stage} failed !!"
       else
