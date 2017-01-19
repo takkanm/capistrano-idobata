@@ -4,6 +4,14 @@ require 'pathname'
 
 module Capistrano
   module Idobata
+    def self.execute_with_client_validation(client)
+      if client && client.valid?
+        yield client
+      else
+        warn "Setup to Idobata Client is Faild."
+      end
+    end
+
     class Client
       def initialize(hook_url)
         @hook_url = hook_url

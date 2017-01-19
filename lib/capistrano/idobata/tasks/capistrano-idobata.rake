@@ -11,38 +11,38 @@ namespace :idobata do
   end
 
   task :starting do
-    if @idobata_client && @idobata_client.valid?
+    Capistrano::Idobata.execute_with_client_validation @idobata_client do |client|
       message = if @deploy_information.branch
         "deploy #{@deploy_information.application}'s #{@deploy_information.branch} to #{@deploy_information.stage} start !! :rocket:"
       else
         "deploy #{@deploy_information.application}' to #{@deploy_information.stage} start !! :rocket:"
       end
 
-      @idobata_client.send(message)
+      client.send(message)
     end
   end
 
   task :finished do
-    if @idobata_client && @idobata_client.valid?
+    Capistrano::Idobata.execute_with_client_validation @idobata_client do |client|
       message = if @deploy_information.branch
         ":white_check_mark: deploy #{@deploy_information.application}'s #{@deploy_information.branch} to #{@deploy_information.stage} success !!"
       else
         ":white_check_mark: deploy #{@deploy_information.application}' to #{@deploy_information.stage} success !!"
       end
 
-      @idobata_client.send(message)
+      client.send(message)
     end
   end
 
   task :failed do
-    if @idobata_client && @idobata_client.valid?
+    Capistrano::Idobata.execute_with_client_validation @idobata_client do |client|
       message = if @deploy_information.branch
         ":broken_heart: deploy #{@deploy_information.application}'s #{@deploy_information.branch} to #{@deploy_information.stage} failed !!"
       else
         ":broken_heart: deploy #{@deploy_information.application}' to #{@deploy_information.stage} failed !!"
       end
 
-      @idobata_client.send(message)
+      client.send(message)
     end
   end
 end
